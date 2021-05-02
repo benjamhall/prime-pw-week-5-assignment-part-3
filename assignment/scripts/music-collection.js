@@ -40,5 +40,15 @@ let album4={
 console.log('You by Aretha Franklin:', album4);
 
 let album5={
-    title: 
-}
+    title: 'A Night at the Opera',
+    artist: 'Queen',
+    yearPublished: 1975,
+};
+console.log('A Night at the Opera by Queen');
+
+let album6={
+    title: 'I and Love and You',
+    artist: 'The Avett Brothers',
+    yearPublished: 2009,
+};
+console.log('I and Love and You by the Avett Brothers');
