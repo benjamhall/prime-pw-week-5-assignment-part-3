@@ -2,53 +2,58 @@ console.log('***** Music Collection *****');
 
 let collection =[];
 
-
-function addCollection (album){      // Function to add album to the collection
-  console.log('in addCollection:', album);
-  collection.push(album);
-  console.log('album has been added');
-  return true;
-}
-console.log('Add to the Album Collection');
-
-let album1={
-    title: 'The Beatles',
-    artist: 'The Beatles',
-    yearPublished: 1968,
+function addCollection (title, artist, yearPublished){
+  let album={
+    title: title,
+    artist: artist,
+    yearPublished: yearPublished,
   };
-console.log('The Beatles by the Beatles:', album1);
+  collection.push(album);
+  return album;
+}
 
-let album2={
-    title: 'Let it Be',
-    artist: 'The Beatles',
-    yearPublished: 1970,
-};
-console.log('Let it Be by the Beatles:', album2);
+console.log(addCollection ('The Beatles', 'The Beatles', 1968));
+console.log(addCollection ('Let it Be', 'The Beatles', 1970));
+console.log(addCollection ('Sunflower', 'The Beach Boys', 1970));
+console.log(addCollection ('You', 'Aretha Franklin', 1975));
+console.log(addCollection ('A Night at the Opera', 'Queen', 1975));
+console.log(addCollection ('I and Love and You', 'Avett Brothers', 2009));
 
-let album3={
-    title: 'Sunflower',
-    artist: 'The Beach Boys',
-    yearPublished: 1970,
-};
-console.log('Sunflower by The Beach Boys:', album3);
 
-let album4={
-    title: 'You',
-    artist: 'Aretha Franklin',
-    yearPublished: 1975,
-};
-console.log('You by Aretha Franklin:', album4);
+console.log('albums added to collection:', (collection));
 
-let album5={
-    title: 'A Night at the Opera',
-    artist: 'Queen',
-    yearPublished: 1975,
-};
-console.log('A Night at the Opera by Queen');
+function showCollection (array){
+  for(let album of collection){
+    console.log(album.title + ' by ' + album.artist + ' published in ' + album.yearPublished);
+  }
+}
 
-let album6={
-    title: 'I and Love and You',
-    artist: 'The Avett Brothers',
-    yearPublished: 2009,
-};
-console.log('I and Love and You by the Avett Brothers');
+showCollection();
+
+function findByArtist(artist){
+  let artistArray =[];
+  for(i=0; i<collection.length; i++){
+    if(artist === collection[i].artist){
+      artistArray.push(collection[i]);
+    }
+  } return artistArray;
+}
+
+console.log(findByArtist ('The Beatles'));
+console.log(findByArtist ('Michael Jackson'));
+
+function search(searchTerm){
+  let searchTermArray =[];
+  for(i=0; i<collection.length; i++){
+    if(collection[i].title === searchTerm || collection[i].artist === searchTerm || collection[i].yearPublished === searchTerm){
+      searchTermArray.push(collection[i]);
+      console.log(`${collection[i].title} by ${collection[i].artist} published in ${collection[i].yearPublished}`);
+  }
+  }
+  return searchTermArray;
+}
+
+search('Avett Brothers');
+search('You');
+search(1970);
+search('Michael Jackson');
