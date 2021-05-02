@@ -31,3 +31,7 @@ let album3={
     yearPublished: 1970,
 };
 console.log('Sunflower by The Beach Boys:', album3);
+
+let album4={
+    title: ''
+};
