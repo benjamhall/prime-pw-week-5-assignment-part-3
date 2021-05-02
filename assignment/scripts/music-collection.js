@@ -2,7 +2,7 @@ console.log('***** Music Collection *****');
 
 let collection =[];
 
-function addCollection (title, artist, yearPublished){
+function addCollection (title, artist, yearPublished){ // This function adds to the collection array 6 different songs with the title, artist and yearPublished
   let album={
     title: title,
     artist: artist,
@@ -22,7 +22,7 @@ console.log(addCollection ('I and Love and You', 'Avett Brothers', 2009));
 
 console.log('albums added to collection:', (collection));
 
-function showCollection (array){
+function showCollection (array){ //This function shows each title, artist and yearPublished in an easy to read sentence
   for(let album of collection){
     console.log(album.title + ' by ' + album.artist + ' published in ' + album.yearPublished);
   }
@@ -30,7 +30,7 @@ function showCollection (array){
 
 showCollection();
 
-function findByArtist(artist){
+function findByArtist(artist){  //The goal of this function is to find a specific artist in the array
   let artistArray =[];
   for(i=0; i<collection.length; i++){
     if(artist === collection[i].artist){
@@ -41,7 +41,6 @@ function findByArtist(artist){
 
 console.log(findByArtist ('The Beatles'));
 console.log(findByArtist ('Michael Jackson'));
-
 
 
 function search(searchTerm){
