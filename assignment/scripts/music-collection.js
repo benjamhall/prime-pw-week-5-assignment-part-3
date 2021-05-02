@@ -42,6 +42,8 @@ function findByArtist(artist){
 console.log(findByArtist ('The Beatles'));
 console.log(findByArtist ('Michael Jackson'));
 
+
+
 function search(searchTerm){
   let searchTermArray =[];
   for(i=0; i<collection.length; i++){
@@ -55,5 +57,5 @@ function search(searchTerm){
 
 search('Avett Brothers');
 search('You');
-search(1970);
+search(1975);
 search('Michael Jackson');
