@@ -33,5 +33,12 @@ let album3={
 console.log('Sunflower by The Beach Boys:', album3);
 
 let album4={
-    title: ''
+    title: 'You',
+    artist: 'Aretha Franklin',
+    yearPublished: 1975,
 };
+console.log('You by Aretha Franklin:', album4);
+
+let album5={
+    title: 
+}
