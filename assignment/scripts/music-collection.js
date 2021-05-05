@@ -43,18 +43,64 @@ console.log(findByArtist ('The Beatles'));
 console.log(findByArtist ('Michael Jackson'));
 
 
-function search(searchTerm){
-  let searchTermArray =[];
-  for(i=0; i<collection.length; i++){
-    if(collection[i].title === searchTerm || collection[i].artist === searchTerm || collection[i].yearPublished === searchTerm){
-      searchTermArray.push(collection[i]);
-      console.log(`${collection[i].title} by ${collection[i].artist} published in ${collection[i].yearPublished}`);
+function search(criteria){
+  //Define an array to hold our search results
+  let matchingRecords = [];
+
+  //Loop through the collection, and finding matching records.
+  for(let record of collection){
+    //We have three different ways to search for records:
+    // 1. By artist
+    // 2. By year
+    // 3. By artist AND year
+    //
+    //Detect which search type we are using and compare the record accordingly
+
+    // By artist and year
+    if(
+      criteria !== undefined &&
+      criteria.artist !== undefined &&
+      criteria.year !== undefined &&
+    ) {
+      if(
+        criteria.artist === record.artist &&
+        criteria.year === record.year
+      ) {
+        matchingRecord.push(record);
+        )
+      }
+    }
+
+    // By artist only
+    else if (
+      criteria != undefined &&
+      criteria.year != undefined
+    ) {
+      if(criteria.year === record.year){
+        matchingRecords.push(record);
+      }
+    }
+   //Criteria is empty or undefined
+   //(add all records)
+   else{
+     matchingRecords.push(record);
+   }
   }
-  }
-  return searchTermArray;
+  return matchingRecords;
 }
 
-search('Avett Brothers');
-search('You');
-search(1975);
-search('Michael Jackson');
+// function search(searchTerm){ //My attempt
+//   let searchTermArray =[];
+//   for(i=0; i<collection.length; i++){
+//     if(collection[i].title === searchTerm || collection[i].artist === searchTerm || collection[i].yearPublished === searchTerm){
+//       searchTermArray.push(collection[i]);
+//       console.log(`${collection[i].title} by ${collection[i].artist} published in ${collection[i].yearPublished}`);
+//   }
+//   }
+//   return searchTermArray;
+// }
+//
+// search('Avett Brothers');
+// search('You');
+// search(1975);
+// search('Michael Jackson');
